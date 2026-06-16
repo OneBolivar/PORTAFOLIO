@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Esteban Bolívar | Portafolio Profesional</title>
+    <meta name="description" content="Portafolio profesional de Juan Esteban Bolívar Pacheco, Desarrollador Junior Full Stack enfocado en el aprendizaje continuo de Python y JavaScript.">
+    <!-- Vinculación del CSS compilado por Sass -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Carga de iconos profesionales -->
+    <link rel="stylesheet" href="https://cloudflare.com" media="all">
+</head>
+<body>
+
+    <!-- Accesibilidad: Salto al contenido principal -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="navbar__container">
+            <span class="navbar__logo"></span>
+            <div class="navbar__actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema" aria-live="polite">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado Perfil / Hero -->
+    <header class="hero">
+        <div class="hero__container">
+            <figure class="hero__profile-wrapper">
+                <img src="assets/img/profile.jpeg" alt="Fotografía profesional de Juan Esteban Bolívar" class="hero__avatar-img">
+            </figure>
+            <h1 class="hero__title">Juan Esteban Bolívar Pacheco</h1>
+            <p class="hero__subtitle">Desarrollador Junior Full Stack</p>
+            <p class="hero__specialty">Enfocado en Python & JavaScript</p>
+            
+            <div class="hero__social">
+                <a href="https://github.com" class="social-link social-link--main" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i> <span>GitHub</span>
+                </a>
+                <!-- Enlace de descarga de tu Hoja de Vida física -->
+                <a href="assets/docs/hoja_de_vida.pdf" class="social-link social-link--cv" download>
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> <span>Descargar CV (PDF)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal Semántico -->
+    <main id="main-content" class="portfolio-main">
+        
+        <!-- Sección Sobre Mí -->
+        <section class="section" aria-labelledby="about-heading">
+            <div class="section__header">
+                <i class="fas fa-user section__icon" aria-hidden="true"></i>
+                <h2 id="about-heading" class="section__title">Sobre Mí</h2>
+            </div>
+            <div class="section__content">
+                <p class="paragraph">Desarrollador apasionado por la lógica de programación y la creación de software funcional. Cuento con una base sólida construyendo Single Page Applications (SPA) con JavaScript nativo y estructurando la lógica backend con Python. Me enfoco en escribir código limpio y comprensible, manteniendo siempre una mentalidad abierta al aprendizaje, la retroalimentación y la mejora continua de mis habilidades técnicas.</p>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades Técnicas -->
+        <section class="section" aria-labelledby="skills-heading">
+            <div class="section__header">
+                <i class="fas fa-code section__icon" aria-hidden="true"></i>
+                <h2 id="skills-heading" class="section__title">Habilidades Técnicas</h2>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <i class="fab fa-js skill-card__icon skill-card__icon--js" aria-hidden="true"></i>
+                    <h3 class="skill-card__title">JavaScript (SPA & MPA)</h3>
+                </article>
+                <article class="skill-card">
+                    <i class="fab fa-python skill-card__icon skill-card__icon--python" aria-hidden="true"></i>
+                    <h3 class="skill-card__title">Python</h3>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-card__multi-icon">
+                        <i class="fab fa-html5 skill-card__icon skill-card__icon--html" aria-hidden="true"></i>
+                        <i class="fab fa-css3-alt skill-card__icon skill-card__icon--css" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="skill-card__title">Diseño de Páginas Web (HTML Y CSS)</h3>
+                </article>
+            </div> <!-- Cierre de la grilla de habilidades -->
+        </section> <!-- Cierre correcto de la sección de habilidades -->
+
+        <!-- Sección Educación (Estructura de Cajas Asimétricas) -->
+        <section class="section" aria-labelledby="education-heading">
+            <div class="section__header">
+                <i class="fas fa-graduation-cap section__icon" aria-hidden="true"></i>
+                <h2 id="education-heading" class="section__title">Educación</h2>
+            </div>
+            <div class="timeline-grid">
+                <!-- Tarjeta Principal Arriba (Ingeniería de Sistemas) -->
+                <article class="timeline-card timeline-card--featured">
+                    <span class="timeline-card__date">2023 - Actualmente</span>
+                    <h3 class="timeline-card__title">Ingeniería de Sistemas</h3>
+                    <p class="timeline-card__institution">Corporación Universitaria Latinoamericana</p>
+                </article>
+                <!-- Tarjeta Inferior Izquierda (Tecnologías TIC) -->
+                <article class="timeline-card">
+                    <span class="timeline-card__date">2022</span>
+                    <h3 class="timeline-card__title">Tecnologías de la Información y Comunicación TIC</h3>
+                    <p class="timeline-card__institution">IED Técnica Metropolitano de Barranquilla</p>
+                </article>
+                <!-- Tarjeta Inferior Derecha (Bachiller Técnico) -->
+                <article class="timeline-card">
+                    <span class="timeline-card__date">2022</span>
+                    <h3 class="timeline-card__title">Título de Bachiller Técnico</h3>
+                    <p class="timeline-card__institution">IED Técnica Metropolitano de Barranquilla</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Experiencia Laboral -->
+        <section class="section" aria-labelledby="experience-heading">
+            <div class="section__header">
+                <i class="fas fa-history section__icon" aria-hidden="true"></i>
+                <h2 id="experience-heading" class="section__title">Experiencia</h2>
+            </div>
+            <div class="timeline-grid timeline-grid--two-columns">
+                <!-- Tarjeta 1 (Asistente Administrativo) -->
+                <article class="timeline-card">
+                    <span class="timeline-card__date">2019 - Actualidad</span>
+                    <h3 class="timeline-card__title">Asistente Administrativo en Documentación Financiera</h3>
+                    <p class="timeline-card__institution">Gestión de Cuentas de Cobro y Registros Administrativos</p>
+                </article>
+                <!-- Tarjeta 2 (Atención al Cliente) -->
+                <article class="timeline-card">
+                    <span class="timeline-card__date">2024</span>
+                    <h3 class="timeline-card__title">Domiciliario / Atención al Cliente</h3>
+                    <p class="timeline-card__institution">Emprendimiento "Arepas El Tal Nené"</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos Destacados -->
+        <section class="section" aria-labelledby="projects-heading">
+            <div class="section__header">
+                <i class="fas fa-briefcase section__icon" aria-hidden="true"></i>
+                <h2 id="projects-heading" class="section__title">Proyectos Destacados</h2>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1: Workspace Reservation System SPA -->
+                <article class="project-card">
+                    <h3 class="project-card__title">Workspace Reservation System SPA</h3>
+                    <p class="project-card__description">Single Page Application (SPA) para logística corporativa. Implementa enrutamiento por hashes, Route Guards por sesión, control de acceso basado en roles (RBAC) y prevención de colisiones horarias.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Vanilla JS ES6</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">TailwindCSS</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: Student Inventory Control System -->
+                <article class="project-card">
+                    <h3 class="project-card__title">Student Inventory Control System</h3>
+                    <p class="project-card__description">Aplicación robusta de consola construida en Python para la administración de inventario educativo. Cuenta con un motor interactivo modular que procesa operaciones CRUD completas.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Python 3</span>
+                        <span class="tag">Modular Scripts</span>
+                        <span class="tag">Data Logic</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3: SPA - Sistema de Gestión de Tickets -->
+                <article class="project-card">
+                    <h3 class="project-card__title">SPA - Sistema de Gestión de Tickets</h3>
+                    <p class="project-card__description">Aplicación SPA nativa optimizada para el flujo de soporte técnico. Dispone de autenticación local persistente y almacenamiento descentralizado simulado a través de bases de datos JSON.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">JavaScript SPA</span>
+                        <span class="tag">JSON Server</span>
+                        <span class="tag">CSS3 Adaptive</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección Contáctame -->
+        <section class="section" aria-labelledby="contact-heading">
+            <div class="section__header">
+                <i class="fas fa-paper-plane section__icon" aria-hidden="true"></i>
+                <h2 id="contact-heading" class="section__title">Contáctame</h2>
+            </div>
+            <div class="contact-block">
+                <a href="mailto:jebolivar33@gmail.com" class="contact-block__link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> <span>jebolivar33@gmail.com</span>
+                </a>
+                <a href="tel:+573003671318" class="contact-block__link">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i> <span>300 367 1318</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer de Contacto Ancho Completo Estilo Referencia -->
+    <footer class="footer-contact">
+        <div class="footer-contact__container">
+            <h2 class="footer-contact__title">¡Trabajemos juntos!</h2>
+            <p class="footer-contact__subtitle">Mi bandeja de entrada está siempre abierta para ser parte de tu próximo gran proyecto.</p>
+            
+            <a href="mailto:jebolivar33@gmail.com" class="footer-contact__btn">Conversemos <i class="fas fa-chevron-right"></i></a>
+            
+            <div class="footer-contact__info-grid">
+                <div class="footer-contact__item">
+                    <i class="fas fa-mobile-alt footer-contact__icon"></i>
+                    <a href="tel:+573003671318" class="footer-contact__link">300 367 1318</a>
+                </div>
+                <div class="footer-contact__item">
+                    <i class="fas fa-envelope footer-contact__icon"></i>
+                    <a href="mailto:jebolivar33@gmail.com" class="footer-contact__link">jebolivar33@gmail.com</a>
+                </div>
+                <div class="footer-contact__item">
+                    <i class="fas fa-map-marker-alt footer-contact__icon"></i>
+                    <span class="footer-contact__text">Barranquilla, Colombia</span>
+                </div>
+            </div>
+            
+            <p class="footer-contact__copyright">&copy; 2026 Juan Esteban Bolívar | Diseñado y construido bajo estándares profesionales.</p>
+        </div>
+    </footer>
+
+    <!-- Vinculación del script lógico final -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+        

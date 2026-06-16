@@ -1,0 +1,295 @@
+// ==========================================================================
+// 1. VARIABLES, COLORES & CONFIGURACIÓN (Cyber-Dark / Morado)
+// ==========================================================================
+$font-main: system-ui, -apple-system, sans-serif;
+$breakpoint-tablet: 650px;
+
+// Mapa de colores de marcas para la inyección automática de iconos
+$colors: (
+  "python": #3776AB, 
+  "js": #F7DF1E, 
+  "html": #E34F26, 
+  "css": #1572B6
+);
+
+:root {
+  // Paleta Base (Tema Oscuro Medio Elegante por defecto)
+  --bg-main: #14121f;          
+  --bg-surface: #1d1a2b;       
+  --text-primary: #f3f1f6;     
+  --text-secondary: #aaa3c0;   
+  --primary-color: #9d4edf;    // Color de acento morado principal
+  --primary-hover: #7b2cbf;    
+  --border-soft: #2d2844;
+  --shadow-sm: 0 4px 10px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] {
+  // Paleta Alternativa (Modo Negro Espacial de Alto Contraste)
+  --bg-main: #0a0810;          
+  --bg-surface: #110e1c;       
+  --text-primary: #ffffff;
+  --text-secondary: #9085af;
+  --primary-color: #b5179e;    
+  --primary-hover: #7209b7;
+  --border-soft: #221c35;
+  --shadow-sm: 0 6px 16px rgb(0 0 0 / 0.6);
+}
+
+// ==========================================================================
+// 2. MIXINS DE AUTOMATIZACIÓN
+// ==========================================================================
+@mixin respond-to-tablet {
+  @media (min-width: $breakpoint-tablet) { @content; }
+}
+
+@mixin flex-center {
+  display: flex; align-items: center; justify-content: center;
+}
+
+// ==========================================================================
+// 3. ESTILOS BASE & RESET NATIVO
+// ==========================================================================
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+body {
+  font-family: $font-main; background-color: var(--bg-main); color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+  position: absolute; top: -40px; left: 0; background: var(--primary-color);
+  color: white; padding: 8px; z-index: 100;
+  &:focus { top: 0; }
+}
+
+// ==========================================================================
+// 4. COMPONENTES SUPERIORES (BEM + Anidamiento Sass)
+// ==========================================================================
+
+// Barra de navegación superior
+.navbar {
+  background-color: var(--bg-surface); border-bottom: 1px solid var(--border-soft);
+  position: sticky; top: 0; z-index: 50; height: 60px;
+
+  &__container {
+    max-width: 900px; margin: 0 auto; padding: 0 24px;
+    display: flex; justify-content: space-between; align-items: center; height: 100%;
+  }
+
+  &__logo { font-weight: 800; color: var(--primary-color); font-size: 1.3rem; letter-spacing: 1px; }
+}
+
+// Botón de alternancia de tema (Luna / Sol)
+.theme-btn {
+  background: none; border: 1px solid var(--border-soft); color: var(--text-primary);
+  width: 36px; height: 36px; border-radius: 50%; cursor: pointer; @include flex-center;
+  &:hover { background-color: var(--bg-main); border-color: var(--primary-color); }
+}
+
+// Sección de presentación principal (Hero)
+.hero {
+  background-color: var(--bg-surface); padding: 50px 24px; text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+
+  &__profile-wrapper {
+    width: 130px; height: 130px; margin: 0 auto 20px; border-radius: 50%;
+    overflow: hidden; border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(157, 78, 223, 0.5); @include flex-center;
+  }
+
+  &__avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  &__title { font-size: 2.2rem; font-weight: 800; margin-bottom: 4px; }
+  &__subtitle { font-size: 1.15rem; color: var(--primary-color); font-weight: 600; }
+  &__specialty { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px; }
+  &__social { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+}
+
+// Botones de enlaces sociales y contacto superior
+.social-link {
+  color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 0.85rem;
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 6px;
+  border: 1px solid var(--border-soft);
+  &:hover { color: var(--primary-color); border-color: var(--primary-color); background: rgba(157, 78, 223, 0.05); }
+
+  &--main {
+    background-color: var(--primary-color); color: white; border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(157, 78, 223, 0.3);
+    &:hover { background-color: var(--primary-hover); color: white; border-color: var(--primary-hover); }
+  }
+
+  &--cv {
+    border-color: #ef4444; color: #f87171;
+    &:hover { border-color: #ef4444; color: #ffffff; background-color: rgba(239, 68, 68, 0.2); }
+  }
+}
+
+// ==========================================================================
+// 5. DISEÑO DE CONTENEDORES Y GRILLA DE HABILIDADES
+// ==========================================================================
+.portfolio-main { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 24px; 
+}
+
+.section {
+  margin-bottom: 40px;
+  &__header { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 18px; 
+    border-bottom: 2px solid var(--border-soft); 
+    padding-bottom: 6px; 
+  }
+  &__icon { color: var(--primary-color); font-size: 1.1rem; }
+  &__title { font-size: 1.25rem; font-weight: 700; }
+}
+
+.paragraph { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+.skills-grid { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 16px; 
+  @media (min-width: 480px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.skill-card {
+  background-color: var(--bg-surface); border: 1px solid var(--border-soft); border-radius: 12px; padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  &__icon {
+    font-size: 2.2rem; display: block; margin-bottom: 12px;
+    @each $tech, $color in $colors { &--#{$tech} { color: $color; } }
+  }
+  &__multi-icon {
+    display: flex; gap: 12px; justify-content: center; margin-bottom: 12px;
+    .skill-card__icon { margin-bottom: 0; }
+  }
+  &__title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: auto; }
+}
+
+// ==========================================================================
+// 6. TIMELINE GRID (Estructura de Cajas Asimétricas — Estilo Referencia)
+// ==========================================================================
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include respond-to-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--two-columns {
+    @include respond-to-tablet { grid-template-columns: repeat(2, 1fr); }
+  }
+}
+
+.timeline-card {
+  background-color: #171524; // Fondo azul/gris oscuro de tu captura
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(157, 78, 223, 0.15);
+  }
+
+  &--featured {
+    @include respond-to-tablet {
+      grid-column: 1 / span 2; // Tarjeta destacada superior de ancho completo
+    }
+  }
+
+  &__date {
+    color: #4cc9f0; // Tono cian brillante para las fechas
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+
+  &__institution {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+}
+
+// ==========================================================================
+// 7. SECCIÓN DE PROYECTOS Y BLOQUE DE CONTACTO MEDIO
+// ==========================================================================
+.projects-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.project-card {
+  background-color: var(--bg-surface); border: 1px solid var(--border-soft); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  &:hover { border-color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); }
+  &__title { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: #ffffff; }
+  &__description { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px; flex-grow: 1; line-height: 1.6; }
+  &__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+}
+
+.tag { background-color: var(--bg-main); border: 1px solid var(--border-soft); padding: 3px 10px; font-size: 0.75rem; font-weight: 600; border-radius: 6px; color: var(--primary-color); }
+.project-link-btn {
+  text-decoration: none; color: #ffffff; background-color: var(--primary-color); padding: 8px 16px; font-size: 0.85rem; font-weight: 600; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 8px rgba(157, 78, 223, 0.2);
+  &:hover { background-color: var(--primary-hover); transform: translateX(2px); }
+}
+
+.contact-block {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  &__link {
+    background-color: var(--bg-surface); border: 1px solid var(--border-soft); color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; box-shadow: var(--shadow-sm);
+    &:hover { border-color: var(--primary-color); color: var(--primary-color); background-color: rgba(157, 78, 223, 0.03); }
+  }
+}
+
+// ==========================================================================
+// 8. FOOTER ANCHO COMPLETO DE ALTO IMPACTO (Estilo Referencia)
+// ==========================================================================
+.footer-contact {
+  background-color: #0c0a12; // Negro absoluto de fondo
+  border-top: 1px solid var(--border-soft);
+  padding: 60px 24px 30px;
+  margin-top: 60px;
+  text-align: center;
+
+  &__container { max-width: 900px; margin: 0 auto; }
+  &__title { font-size: 2rem; font-weight: 800; margin-bottom: 12px; color: #ffffff; }
+
+  &__subtitle {
+    color: var(--text-secondary); font-size: 0.95rem; max-width: 500px; margin: 0 auto 30px; line-height: 1.6;
+  }
+
+  &__btn {
+    display: inline-flex; align-items: center; gap: 10px; background-color: transparent; border: 1px solid #3c3556; color: #ffffff; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.95rem; margin-bottom: 50px;
+    &:hover { border-color: var(--primary-color); box-shadow: 0 0 15px rgba(157, 78, 223, 0.3); }
+  }
+
+  &__info-grid {
+    display: grid; grid-template-columns: 1fr; gap: 30px; border-top: 1px solid #1a1726; padding-top: 40px; margin-bottom: 40px;
+    @media (min-width: 550px) { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  &__item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  &__icon { font-size: 1.5rem; color: var(--primary-color); }
+  &__link, &__text { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  &__link:hover { color: var(--primary-color); }
+  
+  &__copyright { font-size: 0.75rem; color: #534c6d; border-top: 1px solid #1a1726; padding-top: 24px; }
+}
