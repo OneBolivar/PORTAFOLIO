@@ -1,12 +1,12 @@
 /**
- * OneBolivar Core Frontend Logic
- * Control interactivo del bus de tema visual y persistencia nativa
+ * Juan Esteban Bolívar | Core Frontend Logic
+ * Control interactivo del tema visual (Light/Dark) y persistencia nativa
  */
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn.querySelector('i');
     
-    // Aplicación estricta de atributos en el nodo raíz
+    // Función pura para aplicar las variables de tema en el nodo raíz (HTML)
     const applyTheme = (theme) => {
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Estrategia de inicialización híbrida (Storage o Preferencias de Sistema)
+    // Inicialización híbrida: Verifica localStorage o respeta la preferencia del sistema operativo
     const savedTheme = localStorage.getItem('portfolio-theme');
     if (savedTheme) {
         applyTheme(savedTheme);
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(prefersDark ? 'dark' : 'light');
     }
 
-    // Bus de eventos click para mutación de tema
+    // Bus de eventos click para mutar el tema bajo demanda
     themeToggleBtn.addEventListener('click', () => {
-        const isDark = document.documentElement.hasAttribute('data-theme');
-        const nextTheme = isDark ? 'light' : 'dark';
+        const isDarkNow = document.documentElement.hasAttribute('data-theme');
+        const nextTheme = isDarkNow ? 'light' : 'dark';
         applyTheme(nextTheme);
         localStorage.setItem('portfolio-theme', nextTheme);
     });

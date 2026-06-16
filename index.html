@@ -18,7 +18,7 @@
     <!-- Barra de Navegación -->
     <nav class="navbar" aria-label="Navegación principal">
         <div class="navbar__container">
-            <span class="navbar__logo"></span>
+            <span class="navbar__logo">OB</span>
             <div class="navbar__actions">
                 <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema" aria-live="polite">
                     <i class="fas fa-moon" aria-hidden="true"></i>
@@ -83,12 +83,11 @@
                         <i class="fab fa-html5 skill-card__icon skill-card__icon--html" aria-hidden="true"></i>
                         <i class="fab fa-css3-alt skill-card__icon skill-card__icon--css" aria-hidden="true"></i>
                     </div>
-                    <h3 class="skill-card__title">Diseño de Páginas Web (HTML Y CSS)</h3>
+                    <h3 class="skill-card__title">Diseño de Páginas Web (HTML y CSS)</h3>
                 </article>
-            </div> <!-- Cierre de la grilla de habilidades -->
-        </section> <!-- Cierre correcto de la sección de habilidades -->
-
-        <!-- Sección Educación (Estructura de Cajas Asimétricas) -->
+            </div>
+        </section>
+        <!-- Sección Educación -->
         <section class="section" aria-labelledby="education-heading">
             <div class="section__header">
                 <i class="fas fa-graduation-cap section__icon" aria-hidden="true"></i>
@@ -116,7 +115,7 @@
             </div>
         </section>
 
-        <!-- Sección Experiencia Laboral -->
+        <!-- Sección Experiencia -->
         <section class="section" aria-labelledby="experience-heading">
             <div class="section__header">
                 <i class="fas fa-history section__icon" aria-hidden="true"></i>
@@ -138,7 +137,7 @@
             </div>
         </section>
 
-        <!-- Sección Proyectos Destacados -->
+        <!-- Sección Proyectos Destacados (Fiel a tus repositorios de GitHub) -->
         <section class="section" aria-labelledby="projects-heading">
             <div class="section__header">
                 <i class="fas fa-briefcase section__icon" aria-hidden="true"></i>
@@ -146,50 +145,56 @@
             </div>
             <div class="projects-grid">
                 
-                <!-- Proyecto 1: Workspace Reservation System SPA -->
-                <article class="project-card">
-                    <h3 class="project-card__title">Workspace Reservation System SPA</h3>
-                    <p class="project-card__description">Single Page Application (SPA) para logística corporativa. Implementa enrutamiento por hashes, Route Guards por sesión, control de acceso basado en roles (RBAC) y prevención de colisiones horarias.</p>
-                    <div class="project-card__tags">
-                        <span class="tag">Vanilla JS ES6</span>
-                        <span class="tag">Vite</span>
-                        <span class="tag">TailwindCSS</span>
-                        <span class="tag">REST API</span>
-                    </div>
-                    <div class="project-card__links">
-                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Proyecto 2: Student Inventory Control System -->
+                <!-- Proyecto 1: -->
+              
                 <article class="project-card">
                     <h3 class="project-card__title">Student Inventory Control System</h3>
-                    <p class="project-card__description">Aplicación robusta de consola construida en Python para la administración de inventario educativo. Cuenta con un motor interactivo modular que procesa operaciones CRUD completas.</p>
+                    <p class="project-card__description">Aplicación orientada a consola para la administración de inventario educativo desarrollada de forma autónoma. Implementa una arquitectura modular segmentada por archivos funcionales, un menú interactivo de opciones, procesamiento de operaciones CRUD completas de estudiantes, búsquedas atómicas indexadas por identificadores únicos y validaciones lógicas para el control de estados activos e inactivos en tiempo real.</p>
                     <div class="project-card__tags">
                         <span class="tag">Python 3</span>
                         <span class="tag">Modular Scripts</span>
                         <span class="tag">Data Logic</span>
+                        <span class="tag">CLI Menu</span>
                     </div>
                     <div class="project-card__links">
-                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/OneBolivar/Prueba-de-desempe-o-py.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
                         </a>
                     </div>
                 </article>
 
-                <!-- Proyecto 3: SPA - Sistema de Gestión de Tickets -->
+
+                <!-- Proyecto 2:  -->
                 <article class="project-card">
-                    <h3 class="project-card__title">SPA - Sistema de Gestión de Tickets</h3>
-                    <p class="project-card__description">Aplicación SPA nativa optimizada para el flujo de soporte técnico. Dispone de autenticación local persistente y almacenamiento descentralizado simulado a través de bases de datos JSON.</p>
+                    <h3 class="project-card__title">Workspace Reservation System SPA</h3>
+                    <p class="project-card__description">Single Page Application (SPA) modular desarrollada de forma autónoma enfocada en optimizar la logística de infraestructuras corporativas. Implementa enrutamiento del lado del cliente por hashes, Route Guards asíncronos para el control del ciclo de vida de las sesiones y un sistema de control de accesos basado en roles (RBAC). Cuenta con operaciones CRUD avanzadas para inventario de espacios físicos y un motor matemático para la prevención de colisiones horarias en tiempo real.</p>
                     <div class="project-card__tags">
-                        <span class="tag">JavaScript SPA</span>
-                        <span class="tag">JSON Server</span>
-                        <span class="tag">CSS3 Adaptive</span>
+                        <span class="tag">Vanilla JS ES6</span>
+                        <span class="tag">Vite Bundler</span>
+                        <span class="tag">TailwindCSS</span>
+                        <span class="tag">JSON Server API</span>
                     </div>
                     <div class="project-card__links">
-                        <a href="https://github.com" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/OneBolivar/Prueba-de-desempe-o-Modulo-JS" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
+                        </a>
+                    </div>
+                </article>
+
+
+
+                <!-- Proyecto 3: TicketFlowSPA (Colaborativo) -->
+                <article class="project-card">
+                    <h3 class="project-card__title">TicketFlowSPA — Help Desk System</h3>
+                    <p class="project-card__description">Participación activa en el desarrollo de una aplicación web SPA modular diseñada para centralizar incidencias de soporte técnico. El sistema implementa enrutamiento del lado del cliente mediante la History API, tres niveles estrictos de privilegios (ADMIN, TECHNICIAN y USER) y persistencia con LocalStorage. Cuenta con una interfaz dinámica para la asignación de tareas manipulando el DOM y un panel analítico estadístico adaptado al rol del usuario.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Desarrollo en Equipo</span>
+                        <span class="tag">JavaScript Vanilla</span>
+                        <span class="tag">Tailwind CSS v4</span>
+                        <span class="tag">History API & REST</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com/Lmedrano21/TaskFlowSPA" class="project-link-btn" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Inspeccionar Código
                         </a>
                     </div>
@@ -215,7 +220,7 @@
         </section>
     </main>
 
-    <!-- Footer de Contacto Ancho Completo Estilo Referencia -->
+    <!-- Footer de Contacto Ancho Completo -->
     <footer class="footer-contact">
         <div class="footer-contact__container">
             <h2 class="footer-contact__title">¡Trabajemos juntos!</h2>
@@ -246,4 +251,3 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-        

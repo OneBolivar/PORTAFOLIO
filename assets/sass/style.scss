@@ -4,11 +4,11 @@
 $font-main: system-ui, -apple-system, sans-serif;
 $breakpoint-tablet: 650px;
 
-// Mapa de colores de marcas para la inyección automática de iconos
+// Mapa de colores rígidos de marcas para la inyección automática de iconos
 $colors: (
-  "python": #3776AB, 
-  "js": #F7DF1E, 
-  "html": #E34F26, 
+  "python": #3776AB,
+  "js": #F7DF1E,
+  "html": #E34F26,
   "css": #1572B6
 );
 
@@ -18,7 +18,7 @@ $colors: (
   --bg-surface: #1d1a2b;       
   --text-primary: #f3f1f6;     
   --text-secondary: #aaa3c0;   
-  --primary-color: #9d4edf;    // Color de acento morado principal
+  --primary-color: #9d4edf;    // Morado central preferido por el desarrollador
   --primary-hover: #7b2cbf;    
   --border-soft: #2d2844;
   --shadow-sm: 0 4px 10px rgb(0 0 0 / 0.3);
@@ -37,7 +37,7 @@ $colors: (
 }
 
 // ==========================================================================
-// 2. MIXINS DE AUTOMATIZACIÓN
+// 2. MIXINS
 // ==========================================================================
 @mixin respond-to-tablet {
   @media (min-width: $breakpoint-tablet) { @content; }
@@ -67,7 +67,7 @@ body {
 }
 
 // ==========================================================================
-// 4. COMPONENTES SUPERIORES (BEM + Anidamiento Sass)
+// 4. COMPONENTES ARQUITECTURA BEM - ELEMENTOS SUPERIORES
 // ==========================================================================
 
 // Barra de navegación superior
@@ -108,7 +108,7 @@ body {
   &__social { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 }
 
-// Botones de enlaces sociales y contacto superior
+// Botones de enlaces sociales y contacto
 .social-link {
   color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 0.85rem;
   display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 6px;
@@ -126,9 +126,8 @@ body {
     &:hover { border-color: #ef4444; color: #ffffff; background-color: rgba(239, 68, 68, 0.2); }
   }
 }
-
 // ==========================================================================
-// 5. DISEÑO DE CONTENEDORES Y GRILLA DE HABILIDADES
+// 5. LAYOUT CENTRAL, SECCIONES Y GRILLA DE HABILIDADES OPTIMIZADA
 // ==========================================================================
 .portfolio-main { 
   max-width: 900px; 
@@ -159,18 +158,43 @@ body {
   @media (min-width: 480px) { grid-template-columns: repeat(3, 1fr); }
 }
 
+// CORRECCIÓN SASS: Alineación, centrado vertical y altura mínima uniforme para tus habilidades
 .skill-card {
-  background-color: var(--bg-surface); border: 1px solid var(--border-soft); border-radius: 12px; padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background-color: var(--bg-surface); 
+  border: 1px solid var(--border-soft); 
+  border-radius: 12px; 
+  padding: 24px 16px; 
+  text-align: center; 
+  box-shadow: var(--shadow-sm);
+  
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  min-height: 140px; // Evita saltos de caja y desalineaciones de texto
+
   &__icon {
-    font-size: 2.2rem; display: block; margin-bottom: 12px;
+    font-size: 2.2rem; 
+    display: block; 
+    margin-bottom: 12px;
     @each $tech, $color in $colors { &--#{$tech} { color: $color; } }
   }
+
   &__multi-icon {
-    display: flex; gap: 12px; justify-content: center; margin-bottom: 12px;
+    display: flex; 
+    gap: 12px; 
+    justify-content: center; 
+    margin-bottom: 12px;
     .skill-card__icon { margin-bottom: 0; }
   }
-  &__title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: auto; }
+
+  &__title { 
+    font-size: 0.95rem; 
+    font-weight: 700; 
+    color: var(--text-primary); 
+    margin-top: auto; // Fuerza a los títulos a alinearse exactamente en el mismo eje
+    line-height: 1.4;
+  }
 }
 
 // ==========================================================================
@@ -234,7 +258,7 @@ body {
 }
 
 // ==========================================================================
-// 7. SECCIÓN DE PROYECTOS Y BLOQUE DE CONTACTO MEDIO
+// 7. SECCIÓN DE PROYECTOS Y BLOQUE DE CONTACTO INICIAL
 // ==========================================================================
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
 .project-card {
@@ -260,7 +284,7 @@ body {
 }
 
 // ==========================================================================
-// 8. FOOTER ANCHO COMPLETO DE ALTO IMPACTO (Estilo Referencia)
+// 8. FOOTER ANCHO COMPLETO DE ALTO IMPACTO (Estilo Referencia 2)
 // ==========================================================================
 .footer-contact {
   background-color: #0c0a12; // Negro absoluto de fondo
